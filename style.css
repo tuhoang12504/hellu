@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    
+}
+.scene {
+    display: none;
+    height: 100%;
+}
+.scene.active {
+    display: flex;
+}
+/* Scene 1---------------------------------------------------------------------------------------------------------------- */
+.scene-1 {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: linear-gradient(135deg, #ffc0e3 0%, #ffb3d9 100%);
+	z-index:100;
+    align-items: center;
+    justify-content: center;
+}
+.spinner {
+	position:absolute;
+	width: 100px;
+	height: 70px;
+	text-align: center;
+	font-size: 10px;
+	margin-left:-25px;
+}
+
+.spinner > div {
+	background-color: #fff;
+    margin: 1px;
+	height: 100%;
+	width: 6px;
+	display: inline-block; 
+	-webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+	animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+
+.spinner .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+	20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+	0%, 40%, 100% { 
+	transform: scaleY(0.4);
+	-webkit-transform: scaleY(0.4);
+	}  20% { 
+	transform: scaleY(1.0);
+	-webkit-transform: scaleY(1.0);
+	}
+}
+/* Scene 2-------------------------------------------------------------------------------------------------------------- */
+.scene-2 {
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #fff5fb 0%, #ffc0dc 100%);
+	background-size: cover;
+}
+.box {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+.hello {
+	width: 100%;
+	height: 250px;
+	border-radius: 5px;
+	padding: 10px;
+	background: linear-gradient(135deg, #4b49d4 0%, #936dcc 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: -400px;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+}
+.hello p {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	margin: 5px;
+}
+.img {
+	height: 100px;
+	width: 100px;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.button {
+	
+	height: 50px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #ffb3d9 0%, #ffc0e3 100%);
+	color: #fff;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 15px 25px;
+	transition: all 0.3s ease-in-out;
+}
+.letter {
+	width: 100%;
+	height: 250px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #f8f8ff 0%, #d1b7f8 100%);
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	font-family: "Dancing Script", cursive;
+	text-align: justify;
+	position: absolute;
+	top: 400px;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+}
+.smood {
+	top: 0;
+	opacity: 1;
+}
+.btn-letter {
+	pointer-events: none;
+}
+/* Scene 3---------------------------------------------------------------------------- */
+.scene-3 {
+	flex-direction: column;
+	padding: 20px;
+	background: linear-gradient(120deg, #fdcce0, #cfaefa, #ffffff);
+	background-size: 200% 200%;
+	animation: gradientMove 12s ease infinite;
+}
+@keyframes gradientMove {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+.scene-3 .text {
+	flex: 4;
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+	flex-direction: column;
+}
+.scene-3 .text div {
+	font-size: 120px;
+	color: #ff4081;
+	animation: heartBeat 0.8s infinite;
+}
+@keyframes heartBeat {
+	0% {transform: scale(1);}
+	14% {transform: scale(1.3);}
+	28% {transform: scale(1);}
+	42% {transform: scale(1.3);}
+	70% {transform: scale(1);}
+}
+.scene-3 .text p {
+	font-size: 30px;
+	color: #ff4081;
+	text-align: center;
+	font-family: "Dancing Script", cursive;
+}
+.scene-3 .button-area {
+	flex: 8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	position: relative;
+}
+.scene-3 .button-area .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin: 0 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+	
+}
+.btn-yes {
+	background: #ff4081;
+	position: absolute;
+	left: 10px;
+}
+.btn-no {
+	background: #936dcc;
+	position: absolute;
+	right: 10px;
+}
+.heart-icon {
+	font-size: 24px;
+	margin-left: 8px;
+	position: absolute;
+	bottom: 0px;
+	animation: moveUp 3s linear forwards;
+}
+@keyframes moveUp {
+	0% {
+		bottom: 0px;
+	}
+	100% {
+		bottom: 1000px;
+	}
+}
+/* Scene 4--------------------------------------------------------------------------------- */
+.scene-4 {
+	flex-direction: column;
+	padding: 20px;
+	background: linear-gradient(120deg, #fdcce0, #cfaefa, #ffffff);
+	background-size: 200% 200%;
+	animation: gradientMove 12s ease infinite;
+	align-items: center;
+	justify-content: center;
+}
+.reason {
+	width: 380px;
+	height: 300px;
+	background: linear-gradient(180deg, #4b49d4,#8a60c8);
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.reason p {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	margin: 10px 0;
+	font-family: "Dancing Script", cursive;
+}
+.reason input {
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	padding: 10px;
+	margin-top: 10px;
+	outline: none;
+	font-family: "Dancing Script", cursive;
+	font-size: 18px;
+}
+.reason .btn-reason {
+	width: 55%;
+	height: 50px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #ffb3d9 0%, #ffc0e3 100%);
+	color: #fff;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+	margin-top: 20px;
+	padding: 15px 25px;
+	transition: all 0.3s ease-in-out;
+	font-family: "Dancing Script", cursive;
+}
