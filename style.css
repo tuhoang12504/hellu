@@ -229,8 +229,8 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: clamp(120px, 35vw, 200px);
-	height: clamp(60px, 10vw, 100px);
+	width: clamp(150px, 40vw, 250px);
+	height: clamp(60px, 10vw, 80px);
     border-radius: 20px;
     border: none;
     color: white;
