@@ -47,8 +47,12 @@ function AddText() {
         }, i * 40)
     }
 }
+const intervalID = null
 btnLetter.addEventListener('click', () => {
     nextScene()
+    intervalID = setInterval(() => {
+    createHeartIcon()
+}, 600)
 })
 const btnArea = document.querySelector('.button-area')
 const btnYes = document.querySelector('.btn-yes')
@@ -56,20 +60,18 @@ const btnNo = document.querySelector('.btn-no')
 
 let scaleNO = 1
 let scaleYES = 1
-let leftYES = 10
+let leftYES = 20
 btnNo.addEventListener('click', switchButton)
 function switchButton() {
-    const maxX = btnArea.clientWidth - btnNo.offsetWidth
-    const maxY = btnArea.clientHeight - btnNo.offsetHeight
-    const randomX = Math.floor(Math.random() * maxX)
-    const randomY = Math.floor(Math.random() * maxY)
-    btnNo.style.left = randomX + 'px'
-    btnNo.style.top = randomY + 'px'
+    const randomX = 5 + Math.floor(Math.random() * 80)
+    const randomY = 10 + Math.floor(Math.random() * 90)
+    btnNo.style.left = randomX + '%'
+    btnNo.style.top = randomY + '%'
     scaleNO -= 0.05
     scaleYES += 0.05
-    leftYES += 5
+    leftYES += 1
     btnYes.style.transform = `scale(${scaleYES})`
-    btnYes.style.left = leftYES + 'px'
+    btnYes.style.left = leftYES + '%'
     btnNo.style.transform = `scale(${scaleNO})`
 }
 const listIcon = ['💖', '💘', '💝', '💗', '💕', '💞', '💓']
@@ -84,9 +86,7 @@ function createHeartIcon() {
         icon.remove()
     }, 4000)
 }
-const intervalID = setInterval(() => {
-    createHeartIcon()
-}, 600)
+
 btnYes.addEventListener('click', () => {
     nextScene()
     clearInterval(intervalID)
@@ -94,7 +94,7 @@ btnYes.addEventListener('click', () => {
 // Scene 4 ------------------------------------------------------------------------------
 const btnReason = document.querySelector('.btn-reason')
 const reasonInput = document.querySelector('#reason-text')
-const reason = "Tại vì anh quá đẳng cấp và xịn sò"
+const reason = "Tại vì anh quá đẳng cấp và tuyệt vời đó! 💕💕💕"
 const reasonChars = [...reason]
 reasonInput.addEventListener('keydown', (e) => {
     e.preventDefault()
