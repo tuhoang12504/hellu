@@ -63,8 +63,8 @@ let scaleYES = 1
 let leftYES = 20
 btnNo.addEventListener('click', switchButton)
 function switchButton() {
-    const randomX = 5 + Math.floor(Math.random() * 80)
-    const randomY = 10 + Math.floor(Math.random() * 90)
+    const randomX = 5 + Math.floor(Math.random() * 75)
+    const randomY = 5 + Math.floor(Math.random() * 70)
     btnNo.style.left = randomX + '%'
     btnNo.style.top = randomY + '%'
     scaleNO -= 0.05
@@ -109,3 +109,4 @@ reasonInput.addEventListener('keydown', (e) => {
 btnReason.addEventListener('click', () => {
     window.location = "https://m.me/tuhoang12504"
 })
+
